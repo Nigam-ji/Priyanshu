@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nature Vibes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to top, #d0f0c0, #a2d5a3);
+      overflow: hidden;
+      text-align: center;
+      color: #2e4d2e;
+    }
+
+    header {
+      padding: 50px 20px;
+      background: #4caf50;
+      color: white;
+      z-index: 2;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    section {
+      padding: 40px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .nature-image {
+      width: 80%;
+      max-width: 600px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      background: #388e3c;
+      color: white;
+      padding: 20px;
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Animated clouds */
+    .cloud {
+      position: absolute;
+      top: 50px;
+      background: #fff;
+      border-radius: 100px;
+      width: 200px;
+      height: 60px;
+      opacity: 0.8;
+      animation: moveClouds 60s linear infinite;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: #fff;
+      border-radius: 100px;
+    }
+
+    .cloud::before {
+      width: 100px;
+      height: 100px;
+      top: -30px;
+      left: 10px;
+    }
+
+    .cloud::after {
+      width: 120px;
+      height: 120px;
+      top: -40px;
+      left: 100px;
+    }
+
+    .cloud1 { top: 100px; left: -300px; animation-delay: 0s; }
+    .cloud2 { top: 150px; left: -500px; animation-delay: 15s; }
+
+    @keyframes moveClouds {
+      0% { left: -400px; }
+      100% { left: 110%; }
+    }
+
+    /* Falling leaves */
+    .leaf {
+      position: fixed;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Maple_Leaf.svg/64px-Maple_Leaf.svg.png');
+      background-size: cover;
+      animation: fall 10s linear infinite;
+      opacity: 0.8;
+      z-index: 1;
+    }
+
+    .leaf:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .leaf:nth-child(2) { left: 30%; animation-delay: 3s; }
+    .leaf:nth-child(3) { left: 50%; animation-delay: 1.5s; }
+    .leaf:nth-child(4) { left: 70%; animation-delay: 4s; }
+    .leaf:nth-child(5) { left: 90%; animation-delay: 2.5s; }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(100vh) rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Animated Clouds -->
+  <div class="cloud cloud1"></div>
+  <div class="cloud cloud2"></div>
+
+  <!-- Falling Leaves -->
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+  <div class="leaf"></div>
+
+  <header>
+    <h1>Welcome to Nature</h1>
+    <p>Feel the breeze, hear the birds, and relax 🌳</p>
+  </header>
+
+  <section>
+    <img src="https://source.unsplash.com/600x400/?nature,green" alt="Nature Image" class="nature-image">
+    <p>Nature is not a place to visit. It is home. 🍃</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Nature Vibes</p>
+  </footer>
+
+  <!-- Background Bird Sound -->
+  <audio autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+</body>
+</html>
